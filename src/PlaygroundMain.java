@@ -1,35 +1,6 @@
+import classes.Calculate;
+
 public class PlaygroundMain {
-
-    // Basic method
-    static void myMethod() {
-        System.out.println(" Calling method in this class, myMethod() is executed !!");
-    }
-
-    // Method with parameters.
-    // Create a checkAge() method with an integer variable called age
-    static void checkAge(int age) {
-
-        // If age is less than 18, print "access denied"
-        if (age < 18) {
-            System.out.println(" Access denied - You are not old enough!");
-
-            // If age is greater than, or equal to, 18, print "access granted"
-        } else {
-            System.out.println(" Access granted - You are old enough!");
-        }
-
-    }
-
-    // Method Overloading -> 2 method with same name
-    static int plusMethod(int x, int y) {
-        return x + y;
-    }
-
-    static double plusMethod(double x, double y) {
-        return x + y;
-    }
-
-
 
     public static void main(String[] args) {
 
@@ -159,5 +130,44 @@ public class PlaygroundMain {
         System.out.println(" Method Overload plusMethod() int : " + myNum1);
         System.out.println(" Method Overload plusMethod() double : " + myNum2);
 
+        System.out.println("\n------- CLASSES AND OBJECT SECTION -------\n");
+
+        Calculate myObj1 = new Calculate();
+        Calculate myObj2 = new Calculate();
+        System.out.println(" The myObj1, int x = " + myObj1.x);
+        System.out.println(" The myObj2, int x = " + myObj2.x);
+        myObj1.x = 55;
+        System.out.println(" The myObj1, int x = " + myObj1.x);
+
+
+    }
+
+    // Basic method
+    static void myMethod() {
+        System.out.println(" Calling method in this class, myMethod() is executed !!");
+    }
+
+    // Method with parameters.
+    // Create a checkAge() method with an integer variable called age
+    static void checkAge(int age) {
+
+        // If age is less than 18, print "access denied"
+        if (age < 18) {
+            System.out.println(" Access denied - You are not old enough!");
+
+            // If age is greater than, or equal to, 18, print "access granted"
+        } else {
+            System.out.println(" Access granted - You are old enough!");
+        }
+
+    }
+
+    // Method Overloading -> 2 method with same name
+    static int plusMethod(int x, int y) {
+        return x + y;
+    }
+
+    static double plusMethod(double x, double y) {
+        return x + y;
     }
 }

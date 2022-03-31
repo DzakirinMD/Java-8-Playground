@@ -1,41 +1,22 @@
+import classes.Calculate;
+import classes.EnumLevel;
+import inheritance.child.Car;
+import interfaces.AnimalInterface;
+import interfaces.impl.AnimalImpl;
+import polymorphism.child.Cat;
+import polymorphism.child.Dog;
+import polymorphism.parent.Animal;
+
 public class PlaygroundMain {
 
-    // Basic method
-    static void myMethod() {
-        System.out.println(" Calling method in this class, myMethod() is executed !!");
-    }
-
-    // Method with parameters.
-    // Create a checkAge() method with an integer variable called age
-    static void checkAge(int age) {
-
-        // If age is less than 18, print "access denied"
-        if (age < 18) {
-            System.out.println(" Access denied - You are not old enough!");
-
-            // If age is greater than, or equal to, 18, print "access granted"
-        } else {
-            System.out.println(" Access granted - You are old enough!");
-        }
-
-    }
-
-    // Method Overloading -> 2 method with same name
-    static int plusMethod(int x, int y) {
-        return x + y;
-    }
-
-    static double plusMethod(double x, double y) {
-        return x + y;
-    }
-
-
-
+    // Main Method
     public static void main(String[] args) {
 
         // Standard out
         System.out.println("Hello World!");
 
+
+//##########################################################################################################################################//
         /**
          * Java Variables
          *                   Variables are containers for storing data values.
@@ -51,17 +32,19 @@ public class PlaygroundMain {
          *
          * */
 
+        System.out.println("\n------- VARIABLE AND BASIC SECTION -------\n");
 
         int myNum = 5;               // Integer (whole number)
         float myFloatNum = 5.99f;    // Floating point number
         char myLetter = 'D';         // Character
         boolean myBool = true;       // Boolean
         String myText = "Hello";     // String
+        String header = "";          // String
         //If you don't want others (or yourself) to overwrite existing values, use the final keyword (this will declare the variable as "final" or "constant", which means unchangeable and read-only)
         final int myConstantNum = 15;
         //myConstantNum = 20;  // will generate an error: cannot assign a value to a final variable
 
-        System.out.println("\n String : " + myText +
+        System.out.println(" String : " + myText +
                 "\n Int : " + myNum +
                 "\n Constant : " + myConstantNum +
                 "\n Float : " + myFloatNum +
@@ -135,6 +118,8 @@ public class PlaygroundMain {
             System.out.println(" " + i);
         }
 
+//##########################################################################################################################################//
+
         /**
          * Method
          *
@@ -147,8 +132,10 @@ public class PlaygroundMain {
          * Why use methods? To reuse code: define the code once, and use it many times.
          */
 
-        System.out.println("\n------- METHOD SECTION -------\n");
+        header = "\n------- METHOD SECTION -------\n";
+        System.out.println(header);
 
+        // calling method in same class
         myMethod();
         checkAge(20);
 
@@ -159,5 +146,170 @@ public class PlaygroundMain {
         System.out.println(" Method Overload plusMethod() int : " + myNum1);
         System.out.println(" Method Overload plusMethod() double : " + myNum2);
 
+//##########################################################################################################################################//
+
+        /**
+         * Classes
+         */
+        header = "\n------- CLASSES AND OBJECT SECTION -------\n";
+        System.out.println(header);
+
+        Calculate myObj1 = new Calculate();
+        Calculate myObj2 = new Calculate();
+        System.out.println(" The myObj1, int x = " + myObj1.x);
+        System.out.println(" The myObj2, int x = " + myObj2.x);
+        myObj1.x = 55;
+        System.out.println(" The myObj1, int x = " + myObj1.x);
+
+        // Calling method in class
+        Calculate calcObj = new Calculate();
+        int num1 = 5;
+        int num2 = 5;
+        System.out.println(" Calling method in class to calculate the total " +
+                "of " + num1 + " + " + num2 + " = " + calcObj.calculateTwoInteger(num1,num2));
+
+//##########################################################################################################################################//
+
+        header = "\n------- ACCESS MODIFIERS ------ \n";
+        System.out.println( header + "\n Accessing public attribute : " + calcObj.publicAttribute);
+        System.out.println(" Accessing private attribute thru object method : " + calcObj.showPrivateAtrribute());
+        // unable to access protected attribute
+        System.out.println(" Static modifier can be accessed without creating an object ");
+        staticMethod();
+
+
+//##########################################################################################################################################//
+
+        /**
+         * Encapsulation, is to make sure that "sensitive" data is hidden from users.
+         * declare class variables/attributes as private
+         * provide public get and set methods to access and update the value of a private variable
+         *
+         * Inheritance, In Java, it is possible to inherit attributes and methods from one class to another.
+         * We group the "inheritance concept" into two categories:
+         *
+         * subclass (child) - the class that inherits from another class
+         * superclass (parent) - the class being inherited from.
+         *
+         *
+         * Polymorphism,
+         * Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+         * For example, think of a superclass called Animal that has a method called animalSound(). Subclasses of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+         */
+
+        header = "\n------- encapsulation, inheritance and polymorphism ------ \n";
+        System.out.println(header.toUpperCase());
+
+        header = "\n------- encapsulation -> Getter/Setter ------ \n";
+        System.out.println(header.toUpperCase());
+
+        System.out.println(" Using ENCAPSULATION to set a private attribute value ");
+        calcObj.setPrivateAttribute(" I'm a private attribute");
+        System.out.println(" Using ENCAPSULATION to retrieve a private attribute value : " + calcObj.getPrivateAttribute());
+
+        header = "\n------- inheritance -> extends ------ \n";
+        System.out.println(header.toUpperCase());
+
+        Car carObj = new Car();
+
+        System.out.println(" Calling parent method : " + carObj.getBrand());
+        carObj.honk();
+        System.out.println(" Calling child method : " + carObj.getModelName());
+
+        header = "\n------- Polymorphism -> extends (same method but different implementation) ------ \n";
+        System.out.println(header.toUpperCase());
+
+        Animal animalObj = new Animal();
+        Animal dogObj = new Dog();
+        Animal catObj = new Cat();
+        animalObj.animalSound();
+        dogObj.animalSound();
+        catObj.animalSound();
+
+//##########################################################################################################################################//
+
+        /**
+         * Interface and Abstraction
+         * Data abstraction is the process of hiding certain details and showing only essential information to the user.
+         * Abstraction can be achieved with either abstract classes or interfaces.
+         *
+         * Why And When To Use Abstract Classes and Methods?
+         * To achieve security - hide certain details and only show the important details of an object.
+         */
+
+        header = "\n------- Abstraction -> implements ------- \n";
+        System.out.println(header.toUpperCase());
+        AnimalImpl animalImplObj = new AnimalImpl();
+        animalImplObj.animalSound();
+        animalImplObj.actionSleep();
+
+//##########################################################################################################################################//
+
+        /**
+         * Enums
+         * An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+         * eg: instead of public class Level, its public enum Level
+         */
+
+        header = "\n------- enums ------- \n";
+        System.out.println(header.toUpperCase());
+        EnumLevel enumLevelObj = EnumLevel.LOW;
+//        EnumLevel enumLevelObjLow = EnumLevel.LOW;
+//        EnumLevel enumLevelObjMedium = EnumLevel.MEDIUM;
+//        EnumLevel enumLevelObjHigh = EnumLevel.HIGH;
+        switch(enumLevelObj) {
+            case LOW:
+                System.out.println("Low level");
+                System.out.println(enumLevelObj);
+                break;
+            case MEDIUM:
+                System.out.println("Medium level");
+                System.out.println(enumLevelObj);
+                break;
+            case HIGH:
+                System.out.println("High level");
+                System.out.println(enumLevelObj);
+                break;
+        }
+
+
+
+
+    }
+
+
+//##########################################################################################################################################//
+
+    // Basic method
+    static void myMethod() {
+        System.out.println(" Calling method in this class, myMethod() is executed !!");
+    }
+
+    // Method with parameters.
+    // Create a checkAge() method with an integer variable called age
+    static void checkAge(int age) {
+
+        // If age is less than 18, print "access denied"
+        if (age < 18) {
+            System.out.println(" Access denied - You are not old enough!");
+
+            // If age is greater than, or equal to, 18, print "access granted"
+        } else {
+            System.out.println(" Access granted - You are old enough!");
+        }
+
+    }
+
+    // Method Overloading -> 2 method with same name
+    static int plusMethod(int x, int y) {
+        return x + y;
+    }
+
+    static double plusMethod(double x, double y) {
+        return x + y;
+    }
+
+    static void staticMethod(){
+        System.out.println(" Im a Static method ! and i dont need and object ! ");
     }
 }

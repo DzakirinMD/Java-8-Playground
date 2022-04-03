@@ -1,7 +1,11 @@
+import arrayandmap.ArrayListPlayground;
+import arrayandmap.HashMapPlayground;
+import arrayandmap.HashSetPlayground;
 import classes.Calculate;
 import classes.EnumLevel;
+import classes.LambdaPlayground;
+import classes.ThreadPlayground;
 import inheritance.child.Car;
-import interfaces.AnimalInterface;
 import interfaces.impl.AnimalImpl;
 import polymorphism.child.Cat;
 import polymorphism.child.Dog;
@@ -272,7 +276,87 @@ public class PlaygroundMain {
                 break;
         }
 
+//##########################################################################################################################################//
 
+        header = "\n------- Array and Map/HashMap -------";
+        System.out.println(header.toUpperCase());
+
+        System.out.println("------- Arraylist section -------");
+        ArrayListPlayground arrayListPlaygroundObj = new ArrayListPlayground();
+        arrayListPlaygroundObj.doArrayListTesting();
+
+        System.out.println("\n------- HashMap section -------");
+        HashMapPlayground hashMapPlaygroundObj = new HashMapPlayground();
+        hashMapPlaygroundObj.doHashMapTesting();
+
+        System.out.println("\n------- HashSet section -------");
+        HashSetPlayground hashSetPlaygroundObj = new HashSetPlayground();
+        hashSetPlaygroundObj.doHashSetTesting();
+
+//##########################################################################################################################################//
+
+        /**
+         * Java Exceptions
+         * When executing Java code, different errors can occur: coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
+         * When an error occurs, Java will normally stop and generate an error message. The technical term for this is: Java will throw an exception (throw an error).
+         *
+         * The finally statement lets you execute code, after try...catch, regardless of the result:
+         */
+
+        header = "\n------- exception handlings -------";
+        System.out.println(header.toUpperCase());
+
+        try {
+
+            int[] myNumbers = {1, 2, 3};
+            System.out.println(" Index 2 is still in range " + myNumbers[2]);
+            System.out.println(myNumbers[10]); // error!
+        } catch (Exception e){
+            System.out.println(" Index 10 is out of range !!!");
+        } finally {
+            System.out.println("The 'try catch' is finished.");
+        }
+//        checkAgeWithException(2);
+
+//##########################################################################################################################################//
+
+        /**
+         * Java Threads
+         * Threads allows a program to operate more efficiently by doing multiple things at the same time.
+         *
+         * Threads can be used to perform complicated tasks in the background without interrupting the main program.
+         */
+
+        header = "\n------- java threads -------";
+        System.out.println(header.toUpperCase());
+
+        ThreadPlayground threadPlaygroundObj = new ThreadPlayground();
+        threadPlaygroundObj.start();
+//        threadPlaygroundObj.run();
+
+//##########################################################################################################################################//
+
+        /**
+         * Lambda Expressions were added in Java 8.
+         *
+         * A lambda expression is a short block of code which takes in parameters and returns a value.
+         * Lambda expressions are similar to methods, but they do not need a name and they can be implemented right in the body of a method.
+         *
+         * The simplest lambda expression contains a single parameter and an expression:
+         * parameter -> expression
+         * (parameter1, parameter2) -> expression
+         *
+         * Expressions are limited. They have to immediately return a value, and they cannot contain variables, assignments or statements such as if or for.
+         * In order to do more complex operations, a code block can be used with curly braces.
+         * If the lambda expression needs to return a value, then the code block should have a return statement.
+         * (parameter1, parameter2) -> { code block }
+          */
+
+        header = "\n------- java lambda -------";
+        System.out.println(header.toUpperCase());
+
+        LambdaPlayground lambdaPlaygroundObj = new LambdaPlayground();
+        lambdaPlaygroundObj.doLambdaTesting();
 
 
     }
@@ -311,5 +395,15 @@ public class PlaygroundMain {
 
     static void staticMethod(){
         System.out.println(" Im a Static method ! and i dont need and object ! ");
+    }
+
+    // Try and Catch Method
+    static void checkAgeWithException(int age){
+        if (age < 18) {
+            throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+        }
+        else {
+            System.out.println("Access granted - You are old enough!");
+        }
     }
 }

@@ -18,6 +18,8 @@ public class PlaygroundMain {
         // Standard out
         System.out.println("Hello World!");
 
+        long startTime = System.currentTimeMillis();
+
 //##########################################################################################################################################//
         /**
          * Java Variables
@@ -356,6 +358,10 @@ public class PlaygroundMain {
         LambdaPlayground lambdaPlaygroundObj = new LambdaPlayground();
         lambdaPlaygroundObj.doLambdaTesting();
 
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);
+
+        System.out.println(">>> The duration is in milliseconds = : " + duration);
 
     }
 

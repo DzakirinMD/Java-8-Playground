@@ -3,13 +3,20 @@ import arrayandmap.HashMapPlayground;
 import arrayandmap.HashSetPlayground;
 import classes.Calculate;
 import classes.EnumLevel;
-import classes.LambdaPlayground;
+import lambda.LambdaPlayground;
 import classes.ThreadPlayground;
 import inheritance.child.Car;
 import interfaces.impl.AnimalImpl;
 import polymorphism.child.Cat;
 import polymorphism.child.Dog;
 import polymorphism.parent.Animal;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class PlaygroundMain {
 
@@ -356,7 +363,7 @@ public class PlaygroundMain {
         System.out.println(header.toUpperCase());
 
         LambdaPlayground lambdaPlaygroundObj = new LambdaPlayground();
-        lambdaPlaygroundObj.doLambdaTesting();
+//        lambdaPlaygroundObj.doLambdaTesting();
 
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);

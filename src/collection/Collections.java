@@ -3,7 +3,7 @@ package collection;
 /**
  * "Collections is a utility classes". Iterating, sorting, and searching are most widelyy used collections functions
  * Below are some Popular Collections:
- * Map      ---> HashMap
+ * Map      ---> HashMap, TreeMap, and LinkedHashMap
  * List     ---> ArrayList, LinkedList
  * Set      ---> HashSet, TreeSet
  * Queue    ---> PriorityQueue
@@ -11,6 +11,13 @@ package collection;
  */
 public class Collections {
     public static void main(String[] args) {
+
+        // Map Example
+        System.out.println("\n------- Map Example -------");
+        MapExample mapExample = new MapExample();
+        mapExample.hashMap();
+        mapExample.treeMap();
+        mapExample.linkedHashMap();
 
         // Set example
         System.out.println("\n------- Set Example -------");

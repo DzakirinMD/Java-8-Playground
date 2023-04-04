@@ -1,15 +1,14 @@
-package arrayandmap;
+package collection;
 
 import java.util.HashMap;
 
-public class HashMapPlayground {
-
-    /**
-     * HashMap, store items in "key/value" pairs, and you can access them by an index of another type (e.g. a String).
-     */
-
-    public void doHashMapTesting() {
-
+/**
+ * Java Map is an object that maps keys to values. A map cannot contain duplicate keys: Each key can map to at most one value.
+ * The Java platform contains three general-purpose Map implementations: HashMap, TreeMap, and LinkedHashMap.
+ * The basic operations of Map are put, get, containsKey, containsValue, size, and isEmpty.
+ */
+public class MapExample {
+    public void hashMap() {
         HashMap<String, String > capitalCities = new HashMap<String, String>();
 
         // To add into HashMap
@@ -44,4 +43,9 @@ public class HashMapPlayground {
         System.out.println(" The Hashmap is now empty : " + capitalCities);
     }
 
+    public void treeMap() {
+    }
+
+    public void linkedHashMap() {
+    }
 }

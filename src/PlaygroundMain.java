@@ -1,22 +1,12 @@
-import arrayandmap.ArrayListPlayground;
-import arrayandmap.HashMapPlayground;
-import arrayandmap.HashSetPlayground;
 import classes.Calculate;
 import classes.EnumLevel;
-import lambda.LambdaPlayground;
 import classes.ThreadPlayground;
 import inheritance.child.Car;
 import interfaces.impl.AnimalImpl;
+import lambda.LambdaPlayground;
 import polymorphism.child.Cat;
 import polymorphism.child.Dog;
 import polymorphism.parent.Animal;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.TimeZone;
 
 public class PlaygroundMain {
 
@@ -283,24 +273,6 @@ public class PlaygroundMain {
                 break;
         }
 
-//##########################################################################################################################################//
-
-        header = "\n------- Array and Map/HashMap -------";
-        System.out.println(header.toUpperCase());
-
-        System.out.println("------- Arraylist section -------");
-        ArrayListPlayground arrayListPlaygroundObj = new ArrayListPlayground();
-        arrayListPlaygroundObj.doArrayListTesting();
-
-        System.out.println("\n------- HashMap section -------");
-        HashMapPlayground hashMapPlaygroundObj = new HashMapPlayground();
-        hashMapPlaygroundObj.doHashMapTesting();
-
-        System.out.println("\n------- HashSet section -------");
-        HashSetPlayground hashSetPlaygroundObj = new HashSetPlayground();
-        hashSetPlaygroundObj.doHashSetTesting();
-
-//##########################################################################################################################################//
 
         /**
          * Java Exceptions

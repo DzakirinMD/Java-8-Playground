@@ -4,7 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 
+/**
+ * - Use ArrayList when you need fast random access to elements, and the collection will not be frequently modified.
+ *
+ * - Use LinkedList when you frequently add or remove elements from the collection, particularly from the beginning
+ * or end of the list, and random access is not a priority.
+ *
+ */
+
 public class ListExample {
+
+    /**
+     * Data structure   -> Implemented as a dynamic array
+     * Performance      -> Fast constant-time performance for get/set operations (O(1))
+     * Memory           -> Uses less memory
+     * Random Access    -> Provides fast random access to elements via the get(int index) method
+     */
     public void arrayList() {
         ArrayList<String> cars = new ArrayList<String>();
 
@@ -57,6 +72,12 @@ public class ListExample {
         System.out.println( " The cars ArrayList is now empty : " + cars);
     }
 
+    /**
+     * Data structure   -> Implemented as a doubly linked list
+     * Performance      -> Fast constant-time performance for add/remove operations, particularly for large collections, because adding or removing elements only requires updating a few pointers
+     * Memory           -> Uses more memory. It need to store pointer
+     * Random Access    -> Provides slow random access to elements. Requires traversal from the beginning or end of the list to reach a specific element,
+     */
     public void linkedList() {
         LinkedList<String> cars = new LinkedList<String>();
         cars.add("Volvo");
@@ -64,5 +85,7 @@ public class ListExample {
         cars.add("Ford");
         cars.add("Mazda");
         System.out.println(cars);
+
+        cars.forEach(i -> System.out.println(i));
     }
 }

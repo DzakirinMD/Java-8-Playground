@@ -6,7 +6,7 @@ package collection;
  * Map      ---> HashMap, TreeMap, and LinkedHashMap
  * List     ---> ArrayList, LinkedList
  * Set      ---> HashSet, TreeSet
- * Queue    ---> PriorityQueue
+ * Queue    ---> PriorityQueue, LinkedList
  * Iterator
  */
 public class Collections {
@@ -30,5 +30,12 @@ public class Collections {
         ListExample listExample = new ListExample();
         listExample.arrayList();
         listExample.linkedList();
+
+        // Queue example
+        System.out.println("\n------- Queue Example -------");
+        QueueExample queueExample = new QueueExample();
+        queueExample.linkedListQueue();
+        queueExample.priorityQueue();
+
     }
 }

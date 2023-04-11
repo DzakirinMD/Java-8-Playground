@@ -10,8 +10,10 @@ import java.util.LinkedList;
  * - Use LinkedList when you frequently add or remove elements from the collection, particularly from the beginning
  * or end of the list, and random access is not a priority.
  *
+ * List is typically used when ordering and duplicate elements are important, and you need to perform operations
+ * like adding or removing elements in specific positions.
+ *
  */
-
 public class ListExample {
 
     /**

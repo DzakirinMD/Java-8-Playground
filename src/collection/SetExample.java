@@ -6,13 +6,16 @@ import java.util.stream.Collectors;
 
 /**
  * Set Interface
- * Set is a collection that cannot contain duplicate elements.
+ * Set is a collection that cannot contain duplicate elements. and unordered collections
  * This interface models the mathematical set abstraction and is used to represent sets, such as the deck of cards.
  * <p>
  * The Java platform contains three general-purpose Set implementations:
  * HashSet, TreeSet, and LinkedHashSet.
  * Set interface doesn’t allow random-access to an element in the Collection.
  * You can use iterator or foreach loop to traverse the elements of a Set.
+ *
+ * Set is typically used when the uniqueness of elements is important and you need to perform operations like adding or removing elements based on their values, without regard for their positions.
+ *
  */
 public class SetExample {
 

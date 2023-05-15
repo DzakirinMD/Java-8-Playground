@@ -15,20 +15,19 @@ public class StepstoReduceNumbertoZero {
      */
     static int numberOfSteps(int num) {
         int step = 1;
-        while (num != 0) {
+        while (num > 0) {
             System.out.print("Step " + step + ")");
             if(num % 2 == 0) {
                 System.out.print(" " + num + " is even;");
                 num = num / 2;
                 System.out.print(" divide by 2 obtain " + num + "\n");
-                step ++;
             }
             else {
                 System.out.print(" " + num + " is odd;");
                 num = num - 1;
                 System.out.print(" subtract by 1 obtain " + num + "\n");
-                step++;
             }
+            step ++;
         }
         return step - 1;
     }

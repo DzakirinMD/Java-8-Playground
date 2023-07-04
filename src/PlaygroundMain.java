@@ -376,6 +376,7 @@ public class PlaygroundMain {
         return x + y;
     }
 
+    // static method is a method that belongs to a class rather than an instance of a class.
     static void staticMethod(){
         System.out.println(" Im a Static method ! and i dont need and object ! ");
     }

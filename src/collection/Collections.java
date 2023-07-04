@@ -8,6 +8,7 @@ package collection;
  * Set      ---> HashSet, TreeSet
  * Queue    ---> PriorityQueue, LinkedList
  * Iterator
+ * Vector   ---> Stack
  */
 public class Collections {
     public static void main(String[] args) {
@@ -37,5 +38,9 @@ public class Collections {
         queueExample.linkedListQueue();
         queueExample.priorityQueue();
 
+        // Vector example
+        System.out.println("\n------- Vector Example -------");
+        VectorExample vectorExample = new VectorExample();
+        vectorExample.stackVector();
     }
 }
